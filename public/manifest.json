@@ -5,9 +5,9 @@
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/",
-    "name": "WendoJ",
-    "short_name": "WendoJ",
-    "description": "Full-stack website developer and TypeScript enthusiast.",
+    "name": "Praveenasarma",
+    "short_name": "Praveenasarma",
+    "description": "Full-stack developer portfolio of Praveenasarma.",
     "icons": [
         {
             "src": "/icon-192x192.png",

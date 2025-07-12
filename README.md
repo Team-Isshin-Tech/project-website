@@ -1,55 +1,169 @@
-# 🖥️ Personal Portfolio
+# Praveenasarma's Portfolio Website
 
-A sleek, modern, and responsive portfolio bootstrapped with [create-t3-app](https://create.t3.gg/).
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
-[Website Preview](https://github.com/wendoj/portfolio/assets/77996774/b73b02d7-0657-41e3-9124-e6d04b17fe93)
+## 🚀 Features
 
-[🔗 Link to portfolio](https://www.wendoj.codes)
+- **Modern Design**: Clean and professional design with smooth animations
+- **Responsive**: Works perfectly on all devices and screen sizes
+- **Fast Performance**: Optimized for speed and SEO
+- **Interactive**: Smooth scrolling and engaging user interactions
+- **Downloadable CV**: Direct download link for the resume
 
-All you need to know about me, my projects and skills can be found here. Personalize the portfolio by modifying `src/pages/index.tsx` and `src/styles/globals.css` to emulate your own portfolio. Made some improvements and want to share? Open a pull request.
-For any issues, feel free to report them here.
+## 📋 Portfolio Sections
 
-## 🎉 Features
-- **Responsive Design**: The portfolio is designed to be fully responsive, providing an optimal viewing experience across a wide range of devices from desktops to mobile phones.
-- **Easy Customization**: The portfolio structure is straightforward and well organized, making it easy to customize and showcase your unique set of skills and projects.
-- **Stunning UI/UX Design**: The portfolio boasts a sleek and modern design, using smooth animations to capture the attention of potential employers or clients.
-- **Interactive UI**: Utilizing modern web development techniques, the portfolio offers an interactive user interface that enhances user experience, such as `locomotive-scroll` and `framer-motion`.
+### 1. Home
+- Personal introduction and hero section
+- Technology stack highlights
+- Call-to-action buttons
+
+### 2. About
+- Professional bio and background
+- Key statistics and achievements
+- CV download section
+- Recommendations from colleagues (Amra & Upuli)
+
+### 3. Experience
+- GTN Technologies internship
+- MIND Mentoring Program experience
+- Detailed role descriptions and technologies used
+
+### 4. Projects
+- 6 featured projects with descriptions
+- Technology stacks for each project
+- Interactive carousel display
+
+### 5. Skills
+- Programming Languages: JavaScript, TypeScript, Python, Java, HTML, CSS
+- Frameworks & Libraries: React, Vue.js, Node.js, Express.js, Next.js, Tailwind CSS
+- Tools & Technologies: Git, Docker, PostgreSQL, MongoDB, Firebase, AWS
+- Soft Skills: Problem Solving, Team Collaboration, Communication, Time Management, Adaptability
+
+### 6. Certificates
+- AWS Certified Developer
+- React Developer Certification
+- Python Programming
+- Web Development Bootcamp
+
+### 7. Contact
+- Email: baskarakurukkal.21@cse.mrt.ac.lk
+- GitHub: https://github.com/Praveenasarma-Baskarakurukkal
+- LinkedIn: https://www.linkedin.com/in/praveenasarma/
+
+## 🛠️ Technologies Used
+
+- **Framework**: Next.js 13+ with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **UI Components**: Custom components with Radix UI
+- **Smooth Scrolling**: Locomotive Scroll
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── Container.tsx          # Main layout with navigation
+│   ├── Footer.tsx             # Footer component
+│   ├── Preloader.tsx          # Loading screen
+│   └── ui/                    # Reusable UI components
+├── pages/
+│   ├── _app.tsx              # App wrapper
+│   └── index.tsx             # Main portfolio page
+├── styles/                    # CSS modules and global styles
+└── lib/
+    └── utils.ts              # Utility functions
+
+public/
+├── assets/                    # Images and media files
+│   ├── Praveenasarma_CV.docx # Downloadable CV
+│   ├── amra.jpg              # Recommendation photo
+│   ├── upuli.jpg             # Recommendation photo
+│   └── project*.jpg          # Project images
+└── favicon.ico               # Site favicon
+```
 
 ## 🚀 Getting Started
 
-### Prerequisites
-To get started with this portfolio, ensure that you have the following installed on your system:
-- Node.js
-- npm
-- git
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-## 🛠️ Installation
-Follow the steps below to clone and run this project on your local system:
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-```bash
-# Clone the repository
-$ git clone https://github.com/wendoj/developer-portfolio.git
+3. **Open your browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-# Navigate to the project directory
-$ cd developer-portfolio
+## 📝 Customization Guide
 
-# Remove current origin repository
-$ git remote remove origin
-```
+### Updating Personal Information
 
-<br />
+1. **Name and Title**: Update in `src/pages/index.tsx`
+2. **Contact Information**: Update email, GitHub, and LinkedIn links
+3. **CV File**: Replace `public/Praveenasarma_CV.docx` with your CV
+4. **Profile Picture**: Add your photo to `public/assets/`
 
-Then install the required dependencies:
-```bash
-# Install dependencies
-$ npm install
+### Updating Content
 
-# Start the development server:
-$ npm run dev
-```
-Now, open your browser and navigate to `http://localhost:3000` to view your portfolio live.
+1. **About Section**: Modify the bio text in the About section
+2. **Experience**: Update the `experience` array with your work history
+3. **Projects**: Modify the `projects` array with your projects
+4. **Skills**: Update the `skills` object with your technical skills
+5. **Certificates**: Update the `certificates` array with your certifications
+6. **Recommendations**: Update the `recommendations` array with real testimonials
 
+### Styling
 
-## How do I deploy this?
+- **Colors**: Modify the primary colors in `tailwind.config.ts`
+- **Fonts**: Update font imports in `src/styles/globals.css`
+- **Animations**: Adjust animation parameters in the motion components
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## 🎨 Design Features
+
+- **Gradient Backgrounds**: Beautiful gradient overlays
+- **Smooth Animations**: Framer Motion animations throughout
+- **Interactive Cards**: Hover effects and tilt animations
+- **Responsive Grid**: Adaptive layouts for all screen sizes
+- **Modern Typography**: Clean, readable fonts with proper hierarchy
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive and optimized for:
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (320px - 767px)
+
+## 🔧 Build and Deploy
+
+1. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+2. **Start production server**:
+   ```bash
+   npm start
+   ```
+
+3. **Deploy to Vercel** (recommended):
+   ```bash
+   npx vercel
+   ```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE.md).
+
+## 🤝 Contributing
+
+Feel free to submit issues and enhancement requests!
+
+---
+
+**Note**: This portfolio is based on a modern Next.js template and has been customized for Praveenasarma's professional background and experience.

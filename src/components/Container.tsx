@@ -39,8 +39,11 @@ const variants = {
 const navLinks = [
   { href: "#home", text: "Home" },
   { href: "#about", text: "About" },
+  { href: "#experience", text: "Experience" },
   { href: "#projects", text: "Projects" },
-  { href: "#services", text: "Services" },
+  { href: "#skills", text: "Skills" },
+  { href: "#certificates", text: "Certificates" },
+  { href: "#contact", text: "Contact" },
 ];
 
 function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -82,8 +85,8 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Wendo",
-    description: `Full-stack website developer and TypeScript enthusiast.`,
+    title: "Praveenasarma - Full Stack Developer",
+    description: `Full-stack developer with expertise in React, Node.js, and modern web technologies.`,
     image: "/assets/logo.webp",
     type: "website",
     ...customMeta,
@@ -120,19 +123,19 @@ export default function Container(props: ContainerProps) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://www.wendoj.codes${router.asPath}`}
+          content={`https://praveenasarma.com${router.asPath}`}
         />
         <link
           rel="canonical"
-          href={`https://www.wendoj.codes${router.asPath}`}
+          href={`https://praveenasarma.com${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="WendoJ" />
+        <meta property="og:site_name" content="Praveenasarma" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="WendoJ" />
+        <meta name="twitter:site" content="Praveenasarma" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
@@ -162,10 +165,7 @@ export default function Container(props: ContainerProps) {
             <CrossIcon data-hide={!isOpen} />
           </button>
         </div>
-        <Link href="/">
-          <span className="text-lg font-semibold">wendo</span>
-        </Link>
-
+        {/* Remove the logo/brand text from the nav */}
         {/* Desktop menu */}
         <ul className={styles["desktop-nav"]}>
           {navLinks.map((link, i) => (
@@ -220,7 +220,7 @@ export default function Container(props: ContainerProps) {
                 {/* Footer */}
                 <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
                   <span className="text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} wendo. All rights reserved.
+                    © {new Date().getFullYear()} Praveenasarma. All rights reserved.
                   </span>
                 </div>
               </div>
