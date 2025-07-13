@@ -2,6 +2,14 @@ import Container from "@/components/Container";
 import { motion } from "framer-motion";
 import { ChevronDown, Mail, Github, Linkedin, Phone, MapPin, Award, Star, BookOpen, Database, Trophy, Users } from "lucide-react";
 import styles from "@/styles/Home.module.css";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Image from "next/image";
+import img1 from "@/images/1.JPG";
+import img2 from "@/images/2.JPG";
+import img3 from "@/images/WhatsApp Image 2025-06-30 at 4.55.15 PM.jpeg";
+import Autoplay from 'embla-carousel-autoplay';
+
+const heroImages = [img1, img2, img3];
 
 const skillBadges = [
   { icon: <Database className="w-4 h-4 mr-1" />, label: "MySQL" },
@@ -53,9 +61,9 @@ export default function Home() {
   return (
     <Container>
       {/* Hero Section */}
-      <section id="home" className="flex min-h-screen flex-col items-center justify-center">
+      <section id="home" className="flex flex-col md:flex-row min-h-screen items-center justify-center gap-8">
         <motion.div
-          className={styles.intro}
+          className={styles.intro + " flex-1"}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -93,8 +101,30 @@ export default function Home() {
             </span>
           </div>
         </motion.div>
+        <div className="flex-1 w-full max-w-md">
+          <Carousel className="w-full" plugins={[Autoplay({ delay: 3000 })]}>
+            <CarouselContent>
+              {heroImages.map((img, idx) => (
+                <CarouselItem key={idx} className="flex items-center justify-center">
+                  <Image
+                    src={img}
+                    alt={`Hero image ${idx + 1}`}
+                    className="rounded-2xl object-cover"
+                    width={400}
+                    height={400}
+                    priority={idx === 0}
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-2 mt-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </Carousel>
+        </div>
         <motion.div
-          className={styles.scroll}
+          className={styles.scroll + " md:hidden"}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
