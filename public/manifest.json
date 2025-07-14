@@ -5,9 +5,9 @@
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/",
-    "name": "Praveenasarma",
-    "short_name": "Praveenasarma",
-    "description": "Full-stack developer portfolio of Praveenasarma.",
+    "name": "Team Isshin Tech",
+    "short_name": "IsshinTech",
+    "description": "Final Year Research Project website for Team Isshin Tech.",
     "icons": [
         {
             "src": "/icon-192x192.png",

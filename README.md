@@ -1,4 +1,4 @@
-# Praveenasarma's Portfolio Website
+# Team Isshin Tech Portfolio Website
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
@@ -166,4 +166,4 @@ Feel free to submit issues and enhancement requests!
 
 ---
 
-**Note**: This portfolio is based on a modern Next.js template and has been customized for Praveenasarma's professional background and experience.
+**Note**: This portfolio is based on a modern Next.js template and has been customized for Team Isshin Tech's professional background and experience.

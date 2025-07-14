@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { useRouter } from "next/router";
 import Preloader from "@/components/Preloader";
 import styles from "@/styles/Container.module.css";
+import Image from "next/image";
+import isshinTechLogo from "@/images/isshin-tech-logo.jpg";
 
 type IconProps = {
   ["data-hide"]: boolean;
@@ -39,11 +41,11 @@ const variants = {
 const navLinks = [
   { href: "#home", text: "Home" },
   { href: "#about", text: "About" },
-  { href: "#experience", text: "Experience" },
-  { href: "#projects", text: "Projects" },
-  { href: "#skills", text: "Skills" },
-  { href: "#certificates", text: "Certificates" },
-  { href: "#contact", text: "Contact" },
+  { href: "#team", text: "Team" },
+  { href: "#topics", text: "Topics" },
+  { href: "#repository", text: "Repository" },
+  { href: "#survey", text: "Survey" },
+  { href: "#timeline", text: "Timeline" },
 ];
 
 function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -85,8 +87,8 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Praveenasarma - Full Stack Developer",
-    description: `Full-stack developer with expertise in React, Node.js, and modern web technologies.`,
+    title: "Team Isshin Tech - Final Year Research Project",
+    description: `Research group focused on Semantic Similarity and Uncertainty Quantification in Language Models.`,
     image: "/assets/logo.webp",
     type: "website",
     ...customMeta,
@@ -130,12 +132,12 @@ export default function Container(props: ContainerProps) {
           href={`https://praveenasarma.com${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Praveenasarma" />
+        <meta property="og:site_name" content="Team Isshin Tech" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="Praveenasarma" />
+        <meta name="twitter:site" content="Team Isshin Tech" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
@@ -150,22 +152,6 @@ export default function Container(props: ContainerProps) {
             : "bg-transparent",
         )}
       >
-        <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={cn(
-              styles.burger,
-              "inline-flex transform items-center justify-center rounded-md p-2 transition-all duration-300 focus:outline-none",
-            )}
-            aria-controls="mobile-menu"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Open main menu</span>
-            <MenuIcon data-hide={isOpen} />
-            <CrossIcon data-hide={!isOpen} />
-          </button>
-        </div>
-        {/* Remove the logo/brand text from the nav */}
         {/* Desktop menu */}
         <ul className={styles["desktop-nav"]}>
           {navLinks.map((link, i) => (
@@ -220,7 +206,7 @@ export default function Container(props: ContainerProps) {
                 {/* Footer */}
                 <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
                   <span className="text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} Praveenasarma. All rights reserved.
+                    © {new Date().getFullYear()} Team Isshin Tech. All rights reserved.
                   </span>
                 </div>
               </div>

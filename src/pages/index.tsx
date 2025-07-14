@@ -1,455 +1,258 @@
 import Container from "@/components/Container";
-import { motion } from "framer-motion";
-import { ChevronDown, Mail, Github, Linkedin, Phone, MapPin, Award, Star, BookOpen, Database, Trophy, Users } from "lucide-react";
-import styles from "@/styles/Home.module.css";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
-import img1 from "@/images/1.JPG";
-import img2 from "@/images/2.JPG";
-import img3 from "@/images/WhatsApp Image 2025-06-30 at 4.55.15 PM.jpeg";
-import Autoplay from 'embla-carousel-autoplay';
-
-const heroImages = [img1, img2, img3];
-
-const skillBadges = [
-  { icon: <Database className="w-4 h-4 mr-1" />, label: "MySQL" },
-  { icon: <Database className="w-4 h-4 mr-1" />, label: "PostgreSQL" },
-  { icon: <BookOpen className="w-4 h-4 mr-1" />, label: "Python" },
-  { icon: <BookOpen className="w-4 h-4 mr-1" />, label: "Java" },
-  { icon: <BookOpen className="w-4 h-4 mr-1" />, label: "C++" },
-  { icon: <BookOpen className="w-4 h-4 mr-1" />, label: "TypeScript" },
-  { icon: <BookOpen className="w-4 h-4 mr-1" />, label: "JavaScript" },
-  { icon: <BookOpen className="w-4 h-4 mr-1" />, label: "HTML" },
-  { icon: <BookOpen className="w-4 h-4 mr-1" />, label: "CSS" },
-];
-
-const toolBadges = [
-  { icon: <Users className="w-4 h-4 mr-1" />, label: "Git" },
-  { icon: <Users className="w-4 h-4 mr-1" />, label: "JIRA" },
-  { icon: <Users className="w-4 h-4 mr-1" />, label: "VS Code" },
-  { icon: <Users className="w-4 h-4 mr-1" />, label: "Maven" },
-  { icon: <Users className="w-4 h-4 mr-1" />, label: "Postman" },
-  { icon: <Users className="w-4 h-4 mr-1" />, label: "Swagger" },
-  { icon: <Users className="w-4 h-4 mr-1" />, label: "IntelliJ IDEA" },
-  { icon: <Users className="w-4 h-4 mr-1" />, label: "DBeaver" },
-];
-
-const certBadges = [
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "Software Architecture Foundations" },
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "Programming for Beginners" },
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "Makerspace" },
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "Python for Beginners" },
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "Business English" },
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "Basic 3D Design and Animation" },
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "CyberZee'23 quiz competition" },
-];
-
-const achievementBadges = [
-  { icon: <Trophy className="w-4 h-4 mr-1 text-yellow-400" />, label: "Dean's List" },
-  { icon: <Trophy className="w-4 h-4 mr-1 text-yellow-400" />, label: "First Place - Paws Click 2024" },
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "Certificate of Excellence (MIND)" },
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "SLASSCOM Communication Skills" },
-  { icon: <Award className="w-4 h-4 mr-1 text-primary" />, label: "SLASSCOM Presentation Skills" },
-  { icon: <Star className="w-4 h-4 mr-1 text-yellow-400" />, label: "A/L 3As, Z=2.4175, District 12" },
-  { icon: <Star className="w-4 h-4 mr-1 text-yellow-400" />, label: "O/L 9As" },
-  { icon: <BookOpen className="w-4 h-4 mr-1 text-primary" />, label: "MAHAPOLA Scholarship" },
-  { icon: <BookOpen className="w-4 h-4 mr-1 text-primary" />, label: "BOC NANAJAYA & Jinnah Scholarship" },
-  { icon: <Users className="w-4 h-4 mr-1 text-primary" />, label: "Amplifier21 Appreciation" },
-];
+import styles from "@/styles/Home.module.css";
+import isshinTechLogo from "@/images/isshin-tech-logo.jpg";
+import semanticBanner from "@/images/semantic-uncertainty-banner.png";
+import avatarImg from "@/images/avatar.png";
 
 export default function Home() {
   return (
     <Container>
-      {/* Hero Section */}
-      <section id="home" className="flex flex-col md:flex-row min-h-screen items-center justify-center gap-8">
-        <motion.div
-          className={styles.intro + " flex-1"}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="text-5xl font-bold mb-4 text-gradient clash-grotesk">
-            Praveenasarma Baskarakurukkal
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-            Final year Computer Science and Engineering undergraduate at the University of Moratuwa, 
-            currently working on a research project in Semantic Similarity and Uncertainty Quantification.
-            <br /><br />
-            Skilled in Python, Java, and Spring Boot with experience in web development and backend systems. 
-            Actively seeking opportunities in software engineering, machine learning, or NLP.
-          </p>
-          <div className="flex flex-wrap gap-4 mb-8">
-            <a href="https://github.com/Praveenasarma-Baskarakurukkal" target="_blank" rel="noopener noreferrer" className={styles.pill}>
-              <Github className="h-4 w-4 mr-2" />
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/praveenasarma/" target="_blank" rel="noopener noreferrer" className={styles.pill}>
-              <Linkedin className="h-4 w-4 mr-2" />
-              LinkedIn
-            </a>
-            <a href="mailto:baskarakurukkal.21@cse.mrt.ac.lk" className={styles.pill}>
-              <Mail className="h-4 w-4 mr-2" />
-              Email
-            </a>
-            <span className={styles.pill}>
-              <Phone className="h-4 w-4 mr-2" />
-              +94760595738
-            </span>
-            <span className={styles.pill}>
-              <MapPin className="h-4 w-4 mr-2" />
-              Jaffna, Sri Lanka
-            </span>
-          </div>
-        </motion.div>
-        <div className="flex-1 w-full max-w-md">
-          <Carousel className="w-full" plugins={[Autoplay({ delay: 3000 })]}>
-            <CarouselContent>
-              {heroImages.map((img, idx) => (
-                <CarouselItem key={idx} className="flex items-center justify-center">
-                  <Image
-                    src={img}
-                    alt={`Hero image ${idx + 1}`}
-                    className="rounded-2xl object-cover"
-                    width={400}
-                    height={400}
-                    priority={idx === 0}
-                  />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center gap-2 mt-4">
-              <CarouselPrevious />
-              <CarouselNext />
+      {/* Header Section */}
+      <header id="home" className="flex flex-col items-center justify-center min-h-[50vh] py-8 md:py-10 text-center w-full">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-gradient clash-grotesk mt-10 md:mt-14">
+          Semantic Similarity and Uncertainty Quantification
+        </h1>
+
+        <div className="w-full flex justify-center mb-6 md:mb-8">
+          {/* Banner image with overlay caption */}
+          <div className="w-full max-w-3xl relative rounded-xl overflow-hidden">
+            <Image
+              src={semanticBanner}
+              alt="Banner showing NLP and uncertainty concepts"
+              className="object-cover w-full max-h-[400px] h-auto rounded-xl shadow"
+              style={{ objectPosition: 'center' }}
+              priority
+            />
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 text-white text-xs md:text-base px-3 py-1 rounded shadow-md max-w-[90%]">
+              Exploring Semantic Similarity & Uncertainty in Language Models
             </div>
-          </Carousel>
+          </div>
         </div>
-        <motion.div
-          className={styles.scroll + " md:hidden"}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
-          <ChevronDown className="h-4 w-4 animate-bounce" />
-          <span>Scroll down</span>
-        </motion.div>
+      </header>
+
+      {/* About the Project */}
+      <section id="about" className="my-10 md:my-14 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold mb-4 text-gradient clash-grotesk">About the Project</h2>
+        <p className="text-lg text-muted-foreground">
+          This project investigates how large language models (LLMs) can measure and express their uncertainty during language understanding tasks. We explore the use of semantic similarity metrics (e.g., cosine similarity, semantic volume, kernel language entropy) and uncertainty quantification (UQ) techniques to reduce hallucination, increase trust, and improve interpretability in tasks like question answering, retrieval, and summarization.
+        </p>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="my-20 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-gradient clash-grotesk">About Me</h2>
-        <div className="space-y-6">
-          <p className="text-lg text-muted-foreground">
-            Final year Computer Science and Engineering undergraduate at the University of Moratuwa, 
-            currently working on a research project in Semantic Similarity and Uncertainty Quantification. 
-            Skilled in Python, Java, and Spring Boot with experience in web development and backend systems. 
-            Actively seeking opportunities in software engineering, machine learning, or NLP.
-          </p>
+      {/* Team Section */}
+      <section id="team" className="my-10 md:my-14 max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold mb-8 text-gradient clash-grotesk">Team</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Undergraduates */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Education</h3>
-            <div className="space-y-3">
-              <div className="bg-white/5 rounded-lg p-4">
-                <h4 className="font-bold">University of Moratuwa</h4>
-                <p className="text-muted-foreground">BSc (Hons.) in Computer Science and Engineering (2022 – present)</p>
-                <p className="text-sm text-muted-foreground">CGPA: 3.4875/4.0</p>
+            <h3 className="text-xl font-semibold mb-4">🎓 Undergraduates</h3>
+            <ul className="space-y-6">
+              <li className="flex items-center gap-4">
+                <Image
+                  src={avatarImg}
+                  alt="Team member avatar"
+                  width={56}
+                  height={56}
+                  className="rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm object-cover bg-white"
+                />
+                <div>
+                  <div className="font-bold">B. Praveenasarma</div>
+                  <div className="text-sm text-muted-foreground">CSE Department, University of Moratuwa<br/>Colombo, Sri Lanka</div>
+                  <a href="mailto:baskarakurukkal.21@cse.mrt.ac.lk" className="text-xs text-primary underline">baskarakurukkal.21@cse.mrt.ac.lk</a>
+                </div>
+              </li>
+              <li className="flex items-center gap-4">
+                <Image
+                  src={avatarImg}
+                  alt="Team member avatar"
+                  width={56}
+                  height={56}
+                  className="rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm object-cover bg-white"
+                />
+                <div>
+                  <div className="font-bold">R. Akshiya</div>
+                  <div className="text-sm text-muted-foreground">CSE Department, University of Moratuwa<br/>Colombo, Sri Lanka</div>
+                  <a href="mailto:raveendiran.21@cse.mrt.ac.lk" className="text-xs text-primary underline">raveendiran.21@cse.mrt.ac.lk</a>
+                </div>
+              </li>
+              <li className="flex items-center gap-4">
+                <Image
+                  src={avatarImg}
+                  alt="Team member avatar"
+                  width={56}
+                  height={56}
+                  className="rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm object-cover bg-white"
+                />
+                <div>
+                  <div className="font-bold">Karunathilaka G.M.D.S.</div>
+                  <div className="text-sm text-muted-foreground">CSE Department, University of Moratuwa<br/>Colombo, Sri Lanka</div>
+                  <a href="mailto:dilrangi.21@cse.mrt.ac.lk" className="text-xs text-primary underline">dilrangi.21@cse.mrt.ac.lk</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          {/* Supervisors */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4">👨‍🏫 Supervisors</h3>
+            <ul className="space-y-6">
+              <li className="flex items-center gap-4">
+                <Image
+                  src={avatarImg}
+                  alt="Team member avatar"
+                  width={56}
+                  height={56}
+                  className="rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm object-cover bg-white"
+                />
+                <div>
+                  <div className="font-bold">R.T. Uthayasanker</div>
+                  <div className="text-sm text-muted-foreground">CSE Department, University of Moratuwa<br/>Colombo, Sri Lanka</div>
+                  <a href="mailto:rtuthaya@cse.mrt.ac.lk" className="text-xs text-primary underline">rtuthaya@cse.mrt.ac.lk</a>
+                </div>
+              </li>
+              <li className="flex items-center gap-4">
+                <Image
+                  src={avatarImg}
+                  alt="Team member avatar"
+                  width={56}
+                  height={56}
+                  className="rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm object-cover bg-white"
+                />
+                <div>
+                  <div className="font-bold">K. Premaratne</div>
+                  <div className="text-sm text-muted-foreground">Department of Electrical and Computer Engineering,<br/>University of Miami, Coral Gables, FL, USA</div>
+                  <a href="mailto:kamal@miami.edu" className="text-xs text-primary underline">kamal@miami.edu</a>
+                </div>
+              </li>
+              <li className="flex items-center gap-4">
+                <Image
+                  src={avatarImg}
+                  alt="Team member avatar"
+                  width={56}
+                  height={56}
+                  className="rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm object-cover bg-white"
+                />
+                <div>
+                  <div className="font-bold">V. Pragatheeswaran</div>
+                  <div className="text-sm text-muted-foreground">Department of Electrical and Computer Engineering,<br/>University of Miami, Coral Gables, FL, USA</div>
+                  <a href="mailto:pxv245@miami.edu" className="text-xs text-primary underline">pxv245@miami.edu</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Topics / Focus */}
+      <section id="topics" className="my-10 md:my-14 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold mb-4 text-gradient clash-grotesk">Research Topics / Focus</h2>
+        <ul className="list-disc ml-6 text-lg text-muted-foreground space-y-2">
+          <li>Semantic Similarity in NLP</li>
+          <li>Uncertainty Quantification in LLMs</li>
+          <li>Semantic Entropy, Semantic Volume, KLE</li>
+          <li>Hallucination Detection in Language Models</li>
+        </ul>
+      </section>
+
+      {/* Repository */}
+      <section id="repository" className="my-10 md:my-14 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold mb-4 text-gradient clash-grotesk">Repository</h2>
+        <div className="flex flex-col gap-2">
+          <a href="https://github.com/aaivu/semantic-similarity-and-uncertainty" target="_blank" rel="noopener noreferrer" className="text-primary text-lg">
+            🔒 GitHub Repository: https://github.com/aaivu/semantic-similarity-and-uncertainty
+          </a>
+          <span className="text-sm text-muted-foreground">This repository is currently private and will be made public later.</span>
+        </div>
+      </section>
+
+      {/* Survey Paper */}
+      <section id="survey" className="my-10 md:my-14 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold mb-4 text-gradient clash-grotesk">Survey Paper</h2>
+        <button className="px-6 py-2 rounded bg-primary text-primary-foreground font-semibold shadow hover:bg-primary/90 transition" disabled>
+          Download PDF (Coming Soon)
+        </button>
+      </section>
+
+      {/* Timeline */}
+      <section id="timeline" className="my-10 md:my-14 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold mb-6 text-gradient clash-grotesk">Timeline</h2>
+        <div className="bg-white/5 rounded-lg p-6 md:p-8 shadow-sm">
+          <div className="mb-4 text-base md:text-lg font-semibold text-primary flex items-center gap-2">
+            <span>📅</span> Project Timeline (Internal Deadlines)
+          </div>
+          <ul className="timeline-list flex flex-col gap-6 md:gap-7">
+            <li className="flex items-start gap-4">
+              <span className="text-2xl md:text-3xl">📝</span>
+              <div>
+                <div className="font-semibold">Proposal</div>
+                <div className="text-sm md:text-base text-muted-foreground">Supervisor-approved proposal report submission</div>
+                <div className="text-xs md:text-sm text-primary">28th July 2025</div>
               </div>
-              <div className="bg-white/5 rounded-lg p-4">
-                <h4 className="font-bold">Jaffna Hindu College</h4>
-                <p className="text-muted-foreground">2012 – 2020</p>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="text-2xl md:text-3xl">🎤</span>
+              <div>
+                <div className="font-semibold">Proposal Presentation</div>
+                <div className="text-sm md:text-base text-muted-foreground">Student-scheduled presentation</div>
+                <div className="text-xs md:text-sm text-primary">29th July – 9th August 2025</div>
               </div>
-              <div className="bg-white/5 rounded-lg p-4">
-                <h4 className="font-bold">Jaffna Hindu Primary School</h4>
-                <p className="text-muted-foreground">2007 – 2011</p>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="text-2xl md:text-3xl">📈</span>
+              <div>
+                <div className="font-semibold">Progress Report</div>
+                <div className="text-sm md:text-base text-muted-foreground">Supervisor-approved progress report</div>
+                <div className="text-xs md:text-sm text-primary">29th December 2025</div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="my-20 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-gradient clash-grotesk">Experience</h2>
-        <div className="space-y-8">
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold text-primary mb-2 flex items-center"><Users className="w-5 h-5 mr-2 text-primary" />Software Engineering Intern</h3>
-            <p className="text-muted-foreground mb-1">GTN Technologies (Pvt) Ltd, Colombo, Sri Lanka</p>
-            <p className="text-sm text-muted-foreground mb-4">Dec 2024 – Jun 2025</p>
-            <ul className="list-disc ml-6 space-y-1 text-muted-foreground">
-              <li>Developed an Event Planning System using Java; later migrated it to Spring Boot with PostgreSQL</li>
-              <li>Automated API testing with Playwright for validation, pagination, permissions, and error handling</li>
-              <li>Created Mermaid.js diagrams to visualize architecture and improve system understanding</li>
-              <li>Implemented validations for a monitoring application and analyzed execution time</li>
-              <li>Performed peer testing and verifying expected outputs of system components</li>
-            </ul>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold text-primary mb-2 flex items-center"><Users className="w-5 h-5 mr-2 text-primary" />Mentee – MIND Mentoring Program</h3>
-            <p className="text-muted-foreground mb-1">The Corridors Academy</p>
-            <p className="text-sm text-muted-foreground mb-4">Jan 2025 – Jun 2025</p>
-            <ul className="list-disc ml-6 space-y-1 text-muted-foreground">
-              <li>Completed a 6-month mentoring program focused on personal branding, communication, and leadership</li>
-              <li>Awarded Certificate of Excellence and secured 2nd Place in the final cohort evaluation</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="my-20 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-gradient clash-grotesk">Projects</h2>
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-2 flex items-center"><Database className="w-5 h-5 mr-2 text-primary" />Semantic Similarity & Uncertainty Quantification</h3>
-            <p className="text-sm text-muted-foreground mb-3">Python (in progress)</p>
-            <div className="flex flex-wrap gap-2 mb-2">
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><BookOpen className="w-4 h-4 mr-1" />Python</span>
-            </div>
-            <p className="text-muted-foreground">
-              Exploring methods to compute semantic similarity between texts while quantifying uncertainty in predictions. 
-              Currently conducting literature review on embedding-based similarity techniques and evaluating models for 
-              trustworthiness in NLP tasks such as question answering.
-            </p>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-2 flex items-center"><Database className="w-5 h-5 mr-2 text-primary" />Smart Parking System – ParkEase</h3>
-            <p className="text-sm text-muted-foreground mb-3">React, MySQL</p>
-            <div className="flex flex-wrap gap-2 mb-2">
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Users className="w-4 h-4 mr-1" />React</span>
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Database className="w-4 h-4 mr-1" />MySQL</span>
-            </div>
-            <p className="text-muted-foreground">
-              Developed key modules including admin and security dashboards, booking history, user profile management, 
-              and report generation. Implemented validations, real-time report logic, and database design for booking 
-              and user data. Collaborated on requirement analysis and led team coordination.
-            </p>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-2 flex items-center"><Users className="w-5 h-5 mr-2 text-primary" />Research Data Collection Platform</h3>
-            <p className="text-sm text-muted-foreground mb-3">React, Tailwind CSS, NestJS, MongoDB</p>
-            <div className="flex flex-wrap gap-2 mb-2">
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Users className="w-4 h-4 mr-1" />React</span>
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Users className="w-4 h-4 mr-1" />Tailwind</span>
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Users className="w-4 h-4 mr-1" />NestJS</span>
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Database className="w-4 h-4 mr-1" />MongoDB</span>
-            </div>
-            <p className="text-muted-foreground">
-              Developed customizable research data collection, supporting various data types (text, images, audio, video) 
-              with offline functionality. Implemented frontend for password recovery, form responses, and data visualization 
-              dashboards. Integrated NestJS with MongoDB to improve frontend performance.
-            </p>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-2 flex items-center"><Users className="w-5 h-5 mr-2 text-primary" />Airline Reservation System</h3>
-            <p className="text-sm text-muted-foreground mb-3">React, MySQL</p>
-            <div className="flex flex-wrap gap-2 mb-2">
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Users className="w-4 h-4 mr-1" />React</span>
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Database className="w-4 h-4 mr-1" />MySQL</span>
-            </div>
-            <p className="text-muted-foreground">
-              Developed a MySQL-based database for B Airways, handling flight scheduling, bookings, and passenger management. 
-              Implemented dynamic seat selection, passenger categorization, and ensured data integrity by adhering to ACID properties. 
-              Additionally, contributed to front-end design and database development.
-            </p>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-2 flex items-center"><Database className="w-5 h-5 mr-2 text-primary" />RPal interpreter</h3>
-            <p className="text-sm text-muted-foreground mb-3">Java</p>
-            <div className="flex flex-wrap gap-2 mb-2">
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><BookOpen className="w-4 h-4 mr-1" />Java</span>
-            </div>
-            <p className="text-muted-foreground">
-              Developed an interpreter for the functional programming language RPAL, incorporating a lexical analyzer, parser, 
-              and CSE machine. The interpreter was designed to execute RPAL programs by constructing an abstract syntax tree (AST), 
-              standardizing the AST, and evaluating it to produce the correct output.
-            </p>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-2 flex items-center"><Users className="w-5 h-5 mr-2 text-primary" />Nano-processor design</h3>
-            <p className="text-sm text-muted-foreground mb-3">VHDL, Xilinx Vivado</p>
-            <div className="flex flex-wrap gap-2 mb-2">
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Users className="w-4 h-4 mr-1" />VHDL</span>
-              <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Users className="w-4 h-4 mr-1" />Xilinx Vivado</span>
-            </div>
-            <p className="text-muted-foreground">
-              Designed a 4-bit Nano-processor in Vivado software with components such as 4-bit Add/Subtract unit, a 3-bit adder, 
-              a 3-bit Program Counter (PC), k-way b-bit multiplexers, a Register Bank, a Program ROM, an Instruction Decoder, 
-              a 7-Segment Display, and a slow clock. Then implemented the design on a BASYS3 board.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="my-20 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-gradient clash-grotesk">Skills & Knowledge</h2>
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-4 flex items-center"><Database className="w-5 h-5 mr-2 text-primary" />Technical Fields</h3>
-            <ul className="list-disc ml-6 space-y-1 text-muted-foreground">
-              <li>Digital design</li>
-              <li>OOP</li>
-              <li>Data structures and Algorithms</li>
-              <li>Image Processing</li>
-            </ul>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-4 flex items-center"><BookOpen className="w-5 h-5 mr-2 text-primary" />Programming</h3>
-            <div className="flex flex-wrap gap-2 mb-2">
-              {skillBadges.map((badge, idx) => (
-                <span key={idx} className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center">{badge.icon}{badge.label}</span>
-              ))}
-            </div>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-4 flex items-center"><Database className="w-5 h-5 mr-2 text-primary" />Database</h3>
-            <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Database className="w-4 h-4 mr-1" />MySQL</span>
-            <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center ml-2"><Database className="w-4 h-4 mr-1" />PostgreSQL</span>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-4 flex items-center"><Users className="w-5 h-5 mr-2 text-primary" />Tools</h3>
-            <div className="flex flex-wrap gap-2 mb-2">
-              {toolBadges.map((badge, idx) => (
-                <span key={idx} className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center">{badge.icon}{badge.label}</span>
-              ))}
-            </div>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-4 flex items-center"><Users className="w-5 h-5 mr-2 text-primary" />Testing</h3>
-            <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Users className="w-4 h-4 mr-1" />Playwright</span>
-            <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center ml-2"><Users className="w-4 h-4 mr-1" />JUnit</span>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-4 flex items-center"><BookOpen className="w-5 h-5 mr-2 text-primary" />Visualization</h3>
-            <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><BookOpen className="w-4 h-4 mr-1" />Mermaid.js</span>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-4 flex items-center"><Star className="w-5 h-5 mr-2 text-primary" />Other Skills</h3>
-            <ul className="list-disc ml-6 space-y-1 text-muted-foreground">
-              <li>Problem solving, Documentation, Agile technologies, mobile photography</li>
-            </ul>
-          </div>
-          <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-            <h3 className="text-xl font-bold mb-4 flex items-center"><Users className="w-5 h-5 mr-2 text-primary" />Version Control & Project Management</h3>
-            <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center"><Users className="w-4 h-4 mr-1" />GitLab</span>
-            <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center ml-2"><Users className="w-4 h-4 mr-1" />GitHub</span>
-            <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center ml-2"><Users className="w-4 h-4 mr-1" />Jira</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section id="achievements" className="my-20 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-gradient clash-grotesk">Achievements</h2>
-        <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-wrap gap-2`}>
-          {achievementBadges.map((badge, idx) => (
-            <span key={idx} className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center mb-2">{badge.icon}{badge.label}</span>
-          ))}
-        </div>
-      </section>
-
-      {/* Certificates Section */}
-      <section id="certificates" className="my-20 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-gradient clash-grotesk">Professional Certificates</h2>
-        <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-wrap gap-2`}>
-          {certBadges.map((badge, idx) => (
-            <span key={idx} className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs flex items-center mb-2">{badge.icon}{badge.label}</span>
-          ))}
-        </div>
-      </section>
-
-      {/* Clubs & Societies Section */}
-      <section id="clubs" className="my-20 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-gradient clash-grotesk">Clubs & Societies</h2>
-        <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-          <ul className="list-disc ml-6 space-y-2 text-muted-foreground">
-            <li>AIESEC iGT Product Development and Innovation Panelist Colombo South</li>
-            <li>Customer Experience (CXP) team member for the term 23.24 AIESEC Colombo South</li>
-            <li>Publicity team member of Mora Ventures 6.0 program by IEEE and entrepreneurship society</li>
-            <li>IESL Student Member</li>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="text-2xl md:text-3xl">🎥</span>
+              <div>
+                <div className="font-semibold">Progress Presentation</div>
+                <div className="text-sm md:text-base text-muted-foreground">Student-scheduled panel presentation</div>
+                <div className="text-xs md:text-sm text-primary">30th December 2025 – 10th January 2026</div>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="text-2xl md:text-3xl">🖼️</span>
+              <div>
+                <div className="font-semibold">Poster Preparation</div>
+                <div className="text-sm md:text-base text-muted-foreground">Printed poster ready</div>
+                <div className="text-xs md:text-sm text-primary">8th March 2026</div>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="text-2xl md:text-3xl">🧾</span>
+              <div>
+                <div className="font-semibold">Poster Presentation</div>
+                <div className="text-sm md:text-base text-muted-foreground">Present to panel (during FYP time slot)</div>
+                <div className="text-xs md:text-sm text-primary">10th–11th March 2026</div>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="text-2xl md:text-3xl">📘</span>
+              <div>
+                <div className="font-semibold">Final Report</div>
+                <div className="text-sm md:text-base text-muted-foreground">Final report draft submitted to supervisor</div>
+                <div className="text-xs md:text-sm text-primary">7th April 2026</div>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="text-2xl md:text-3xl">🎓</span>
+              <div>
+                <div className="font-semibold">Final Evaluation</div>
+                <div className="text-sm md:text-base text-muted-foreground">Final viva / defense presentation</div>
+                <div className="text-xs md:text-sm text-primary">14th – 25th April 2026</div>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="text-2xl md:text-3xl">🎉</span>
+              <div>
+                <div className="font-semibold">FYP Showcase</div>
+                <div className="text-sm md:text-base text-muted-foreground">Final Year Project public showcase</div>
+                <div className="text-xs md:text-sm text-primary">Last week of April 2026</div>
+              </div>
+            </li>
           </ul>
-        </div>
-      </section>
-
-      {/* Relevant Academics Section */}
-      <section id="academics" className="my-20 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-gradient clash-grotesk">Relevant Academics</h2>
-        <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-          <ul className="list-disc ml-6 space-y-2 text-muted-foreground">
-            <li>Database Systems: <span className="font-semibold text-primary">A</span></li>
-            <li>Data structures and Algorithms: <span className="font-semibold text-primary">A</span></li>
-            <li>Programming Fundamentals: <span className="font-semibold text-primary">A</span></li>
-            <li>Program Construction: <span className="font-semibold text-primary">A-</span></li>
-            <li>Data Communication and Networking: <span className="font-semibold text-primary">A</span></li>
-            <li>Computer Architecture: <span className="font-semibold text-primary">A-</span></li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Volunteering Section */}
-      <section id="volunteering" className="my-20 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-gradient clash-grotesk">Volunteering</h2>
-        <div className={`${styles["project-card"]} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-          <ul className="list-disc ml-6 space-y-2 text-muted-foreground">
-            <li>CSE Careers Day 2024 Company Coordinator</li>
-            <li>Decoration team & Finance team member for Intreccio'24 (CSE Night)</li>
-            <li>Project Blue Waves (Beach cleanup project by AIESEC Sri Lanka)</li>
-            <li>Mora Exams 2021 conducted by Tamil Literary Association, University of Moratuwa</li>
-            <li>Event handling member for "Monster Mash 2.0" - The Halloween Night, by Rotaract Club</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="my-20 max-w-4xl mx-auto">
-        <div className="rounded-lg bg-gradient-to-br from-primary/10 to-white/5 px-8 py-16 text-center shadow-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
-          <h2 className="text-4xl font-bold mb-4 text-gradient clash-grotesk">Let's Connect!</h2>
-          <p className="mb-8 text-lg text-muted-foreground">
-            Interested in collaborating, hiring, or just want to say hi? Fill out the form below or reach out via email or LinkedIn.
-          </p>
-          <form
-            className="mx-auto max-w-xl flex flex-col gap-4"
-            action="mailto:baskarakurukkal.21@cse.mrt.ac.lk"
-            method="POST"
-            encType="text/plain"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-              className="rounded-md border border-primary bg-background px-4 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              className="rounded-md border border-primary bg-background px-4 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              required
-              rows={4}
-              className="rounded-md border border-primary bg-background px-4 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <button
-              type="submit"
-              className="mt-2 rounded-md bg-primary px-6 py-2 font-semibold text-white transition hover:bg-primary/80"
-            >
-              Send Message
-            </button>
-          </form>
-          <div className="mt-8 flex flex-row justify-center gap-6">
-            <a href="mailto:baskarakurukkal.21@cse.mrt.ac.lk" className="hover:text-primary transition">
-              <Mail className="inline h-6 w-6" />
-            </a>
-            <a href="https://github.com/Praveenasarma-Baskarakurukkal" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
-              <Github className="inline h-6 w-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/praveenasarma/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
-              <Linkedin className="inline h-6 w-6" />
-            </a>
-          </div>
         </div>
       </section>
     </Container>
